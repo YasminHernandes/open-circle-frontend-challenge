@@ -64,6 +64,31 @@ Utilize a seguinte API para autenticação: https://api-mock-autenticacao.com/v1
 **Parâmetros da API:**
 (Use as credenciais corretas e incorretas conforme explicado no texto original)
 
+
+### **Habilidades Avaliadas**
+
+- **HTML:**
+  - Estrutura semântica do HTML5 e acessibilidade.
+  - Uso de elementos e atributos apropriados para cada componente.
+  - Compatibilidade cross-browser (considerando os últimos 2 lançamentos de versões dos principais navegadores).
+
+- **CSS:**
+  - Uso de técnicas de design responsivo e mobile-first.
+  - Uso de pré-processadores CSS (como SASS ou LESS) será considerado um plus.
+  - Aplicação de estilos consistentes e reutilização de código.
+  - Aplicação de animações e transições para melhorar a experiência do usuário.
+
+- **JavaScript:**
+  - Uso de técnicas de programação assíncrona (Promises, Async/Await).
+  - Uso adequado do DOM para manipular elementos na página.
+  - Estruturação do código e organização (utilizando módulos, classes e/ou funções).
+  - Manutenção de estado e gerenciamento de dados (como lidar com o estado de um usuário logado, por exemplo).
+  - Implementação de rotas de forma clara e funcional (utilizando bibliotecas, como o React Router, se necessário).
+  
+- **Git:**
+  - Organização e clareza nos commits.
+  - Uso correto dos fluxos de trabalho do Git (branches, merges, pull requests, etc.).
+
 ### **Algumas Dicas e Orientações:**
 - Apreciamos a implementação de funcionalidades extras e/ou melhorias no design!
 - Iremos avaliar cada pequeno detalhe, padrão ou conceito que você aplicar.
