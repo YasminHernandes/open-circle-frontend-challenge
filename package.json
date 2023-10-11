@@ -1,0 +1,16 @@
+{
+  "name": "frontend-challenge",
+  "version": "1.0.0",
+  "description": "Agradecemos imensamente por considerar fazer parte do nosso time!\r Você encontrará, a seguir, todas as informações que precisa para começar o seu teste técnico.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "sass --watch styles/sass/styles.scss styles/css/styles.css"
+  },
+  "keywords": [],
+  "author": "Yasmin Hernandes",
+  "license": "ISC",
+  "dependencies": {
+    "sass": "^1.69.2"
+  }
+}
