@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "dev": "sass --watch styles/sass/styles.scss styles/css/styles.css"
+    "dev": "sass --watch ./styles/scss:styles/css/"
   },
   "keywords": [],
   "author": "Yasmin Hernandes",

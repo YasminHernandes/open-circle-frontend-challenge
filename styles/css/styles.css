@@ -1,0 +1,273 @@
+.main {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 1.6rem;
+  transition: background 0.4s ease-in;
+}
+.main.bg {
+  background: rgba(196, 196, 196, 0.75);
+}
+.main .login-container__button {
+  width: 100%;
+  max-width: 359px;
+  height: 59px;
+  padding: 1.6rem;
+  background-color: #FF7020;
+  border: none;
+  border-radius: 10px;
+  font-weight: 600;
+  font-size: 1.8rem;
+  color: #FFFFFF;
+  text-align: center;
+}
+.main .login-container__button:hover {
+  filter: brightness(0.9);
+}
+.main .login-container__button:active {
+  transform: scale(0.98);
+}
+.main .login-container__button.none {
+  display: none;
+}
+.main .container-modal {
+  width: 90%;
+  max-width: 732px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 2.4rem;
+  position: absolute;
+  background-color: #FFFFFF;
+  border-radius: 6px;
+  padding: 3.2rem 4.4rem 8rem;
+  transform: scale(0);
+  opacity: 0;
+  transition: 0.4s ease-in;
+}
+.main .container-modal.open {
+  opacity: 1;
+  transform: scale(1);
+}
+.main .container-modal .close__button {
+  width: 22px;
+  height: 22px;
+  align-self: self-end;
+  cursor: pointer;
+}
+.main .container-modal .form__wrapper {
+  width: 100%;
+  height: 100%;
+}
+.main .container-modal .form__wrapper .form {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 2.4rem;
+  overflow: auto;
+}
+.main .container-modal .form__wrapper .form .wrapper {
+  width: 100%;
+  margin: 0 auto;
+  max-width: 360px;
+}
+.main .container-modal .form__wrapper .form .wrapper .head__container .logo {
+  width: 76px;
+  height: 56px;
+  margin-bottom: 4rem;
+}
+.main .container-modal .form__wrapper .form .wrapper .head__container .title, .main .container-modal .form__wrapper .form .wrapper .head__container .subtitle {
+  font-weight: 700;
+  font-size: 3.4rem;
+  font-family: "Work sans";
+  color: #222222;
+  text-align: center;
+}
+@media screen and (min-width: 1025.98px) {
+  .main .container-modal .form__wrapper .form .wrapper .head__container .title, .main .container-modal .form__wrapper .form .wrapper .head__container .subtitle {
+    font-size: 3.8rem;
+  }
+}
+.main .container-modal .form__wrapper .form .wrapper .head__container .subtitle {
+  font-weight: 400;
+  font-size: 1.3rem;
+  opacity: 0.4;
+  margin-top: 1.6rem;
+}
+@media screen and (min-width: 1025.98px) {
+  .main .container-modal .form__wrapper .form .wrapper .head__container .subtitle {
+    font-size: 1.8rem;
+  }
+}
+.main .container-modal .form__wrapper .form .wrapper .fields__container {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  gap: 3.2rem;
+  margin: 7rem auto;
+}
+@media screen and (min-width: 1025.98px) {
+  .main .container-modal .form__wrapper .form .wrapper .fields__container {
+    margin: 10.4rem auto;
+  }
+}
+.main .container-modal .form__wrapper .form .wrapper .fields__container .field {
+  width: 100%;
+  position: relative;
+}
+.main .container-modal .form__wrapper .form .wrapper .fields__container .field label {
+  font-family: Work Sans;
+  font-weight: 400;
+  font-size: 1.2rem;
+  color: #656565;
+  display: block;
+  position: absolute;
+  top: 50%;
+  left: 12px;
+  transform: translateY(-50%);
+  padding: 0 12px;
+  transition: top 0.2s ease-in;
+}
+.main .container-modal .form__wrapper .form .wrapper .fields__container .field.focused label {
+  background: white;
+  text-align: center;
+  color: #FF7020;
+  top: 0;
+}
+.main .container-modal .form__wrapper .form .wrapper .fields__container .field input {
+  width: 100%;
+  height: 60px;
+  background: #FFFFFF !important;
+  border: 1px solid #CDCDCD;
+  border-radius: 10px;
+  padding: 2.4rem 1.8rem;
+  font-weight: 400;
+  font-size: 1.2rem;
+  color: #656565;
+}
+.main .container-modal .form__wrapper .form .wrapper .fields__container .field input::placeholder {
+  font-weight: 400;
+  font-size: 1.2rem;
+  color: #656565;
+}
+.main .container-modal .form__wrapper .form .wrapper .fields__container .field input:focus {
+  border-color: #FF7020;
+  outline: none;
+  transition: 0.4s ease-in;
+}
+.main .container-modal .form__wrapper .form .wrapper .fields__container .field input:valid {
+  border-color: #FF7020;
+  background: #FFFFFF !important;
+}
+.main .container-modal .form__wrapper .form .wrapper .fields__container .field.error label {
+  color: #d06b6b;
+}
+.main .container-modal .form__wrapper .form .wrapper .fields__container .field.error input {
+  border-color: #d06b6b;
+}
+.main .container-modal .form__wrapper .form .wrapper .fields__container .field.error .error-message {
+  display: block;
+  position: absolute;
+  bottom: -20px;
+  left: 10px;
+  font-weight: 500;
+  font-size: 0.9rem;
+  color: #d06b6b;
+}
+.main .container-modal .form__wrapper .form .wrapper .fields__container .field .error-message {
+  display: none;
+}
+.main .container-modal .form__wrapper .form .wrapper .fields__container .logar {
+  width: 100%;
+  height: 60px;
+  background: #FF7020;
+  border: none;
+  border-radius: 10px;
+  font-weight: 600;
+  font-size: 1.4rem;
+  color: #FFFFFF;
+}
+.main .container-modal .form__wrapper .form .wrapper .fields__container .logar:hover {
+  filter: brightness(0.9);
+}
+.main .container-modal .form__wrapper .form .wrapper .fields__container .logar:active {
+  transform: scale(0.98);
+}
+.main .container-modal .form__wrapper .form .wrapper .fields__container .logar:disabled {
+  filter: brightness(0.7);
+  cursor: not-allowed;
+}
+.main .container-modal .form__wrapper .form .wrapper .fields__container .logar:disabled:active {
+  transform: scale(1);
+}
+@media screen and (min-width: 1025.98px) {
+  .main .container-modal .form__wrapper .form .wrapper .fields__container .logar {
+    font-size: 1.8rem;
+  }
+}
+.main .container-modal .form__wrapper .form .form__footer {
+  display: block;
+  width: 100%;
+  text-align: center;
+  font-weight: 500;
+  font-size: 1.2rem;
+  color: #222222;
+}
+.main .container-modal .form__wrapper .form .form__footer .sign-up {
+  color: #FF7020;
+}
+.main .container-modal .form__wrapper .form .form__footer .sign-up:hover {
+  opacity: 0.6;
+}
+@media screen and (min-width: 1025.98px) {
+  .main .container-modal .form__wrapper .form .form__footer {
+    font-size: 1.6rem;
+  }
+}
+.main .container-modal .success__wrapper {
+  display: none;
+  width: 100%;
+}
+.main .container-modal .success__wrapper .title, .main .container-modal .success__wrapper .form__wrapper .form .wrapper .head__container .subtitle, .main .container-modal .form__wrapper .form .wrapper .head__container .success__wrapper .subtitle {
+  font-weight: 700;
+  font-size: 1.6rem;
+  color: #222222;
+  text-align: center;
+  margin-bottom: 6rem;
+}
+@media screen and (min-width: 1025.98px) {
+  .main .container-modal .success__wrapper .title, .main .container-modal .success__wrapper .form__wrapper .form .wrapper .head__container .subtitle, .main .container-modal .form__wrapper .form .wrapper .head__container .success__wrapper .subtitle {
+    font-size: 2.8rem;
+    margin-bottom: 12rem;
+  }
+}
+.main .container-modal .success__wrapper .sucess__image {
+  width: inherit;
+  margin-bottom: 12rem;
+}
+.main .container-modal .success__wrapper .see-products__button {
+  width: 100%;
+  max-width: 360px;
+  display: block;
+  background: #FF7020;
+  border-radius: 10px;
+  padding: 1.6rem;
+  margin: auto;
+  font-weight: 600;
+  font-size: 1.2rem;
+  color: #FFFFFF;
+  text-align: center;
+}
+@media screen and (min-width: 1025.98px) {
+  .main .container-modal .success__wrapper .see-products__button {
+    font-size: 1.8rem;
+  }
+}
+
+/*# sourceMappingURL=styles.css.map */

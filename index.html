@@ -7,9 +7,99 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&family=Work+Sans:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="./styles/main.css">
+    <link rel="shortcut icon" href="./assets//vetores/logo.svg" type="image/x-icon">
+    <link rel="stylesheet" href="styles/css/global.css">
+    <link rel="stylesheet" href="styles/css/styles.css">
 </head>
 <body>
+    <main class="main ">
+        <button type="button" 
+            class="login-container__button login__button" 
+            onclick="handleOpenForm()"
+            >
+            Login
+        </button>
 
+        <section class="container-modal">
+            <img src="assets/vetores/close.svg" 
+                class="close__button"
+                title="Fechar"
+                onclick="handleOpenForm()"
+            />
+           
+            <div class="form__wrapper">
+                <form method="post" class="form">
+                    <div class="wrapper">
+                        <div class="head__container">
+                            <img src="assets/vetores/logo.svg" alt="logo" class="logo">
+                            <h1 class="title">
+                                Bem vindo de volta
+                            </h1>
+                            <h2 class="subtitle">
+                                Entre para continuar e explorar ao seu alcance
+                            </h2>
+                        </div>
+        
+                        <div class="fields__container">
+                            <div class="field">
+                                <label for="email">
+                                    Email
+                                </label>
+                                <input type="email" 
+                                    name="email" 
+                                    id="email" 
+                                    onkeydown="checkFormValidation()"
+                                    onfocus="inputFocused()"
+                                    onblur="inputBlur()"
+                                    autofocus
+                                    autocomplete="email"
+                                    required
+                                />
+                                <span class="error-message">Insira um email válido!</span>
+                            </div>
+
+                            <div class="field">
+                                <label for="password">
+                                    Senha
+                                </label>
+                                <input type="password" 
+                                    name="password" 
+                                    id="password"
+                                    onkeydown="checkFormValidation()"
+                                    onfocus="inputFocused()"
+                                    onblur="inputBlur()"
+                                    autocomplete="current-password"
+                                    required
+                                />
+                            </div>
+    
+                            <button type="submit" 
+                                class="logar"
+                                onclick="handleSubmit()"
+                                disabled
+                            >
+                                Logar
+                            </button>
+                        </div>
+                        <span class="form__footer">
+                            Não tem conta?
+                            <a href="" class="sign-up">Cadastre-se</a>
+                        </span>
+                    </div>                    
+                </form>
+            </div>
+    
+
+            <div class="success__wrapper">
+                <h1 class="title">Login realizado com sucesso</h1>
+                <img src="assets/vetores/success.svg" alt="success image" class="sucess__image">
+                <a href="" class="see-products__button">Ver Produtos</a>
+            </div>
+        </section>
+
+
+    </main>
+
+    <script src="./main.js" type="text/javascript"></script>
 </body>
 </html>

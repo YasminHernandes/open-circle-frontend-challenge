@@ -1,0 +1,303 @@
+@import './variables';
+
+.main {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 1.6rem;
+    transition: background .4s ease-in;
+    
+    &.bg {
+        background: rgb(196 196 196 / 0.75);
+    }
+
+    .login-container__button {
+        width: 100%;
+        max-width: 359px;
+        height: 59px;
+        padding: 1.6rem;
+        background-color: $color-primary;
+        border: none;
+        border-radius: 10px;
+        font-weight: 600;
+        font-size: 1.8rem;
+        color: $color-white;
+        text-align: center;
+    
+        &:hover {
+            filter: brightness(.9);
+        }
+
+        &:active {
+            transform: scale(.98);
+        }
+
+        &.none {
+            display: none;
+        }
+    }
+
+    .container-modal {
+        width: 90%;
+        max-width: 732px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: flex-start;
+        gap: 2.4rem;
+        position: absolute;
+        background-color: $color-white;
+        border-radius: 6px;
+        padding: 3.2rem 4.4rem 8rem;
+        transform: scale(0);
+        opacity: 0;
+        transition: .4s ease-in;
+        
+        &.open {
+            opacity: 1;
+            transform: scale(1);
+        }
+
+        .close__button {
+            width: 22px;
+            height: 22px;
+            align-self: self-end;
+            cursor: pointer;
+        }
+
+        .form__wrapper {
+            width: 100%;
+            height: 100%;
+
+            .form {
+                height: 100%;
+                display: flex;
+                flex-direction: column;
+                justify-content: space-between;
+                gap: 2.4rem;
+                overflow: auto;
+    
+                .wrapper {
+                    width: 100%;
+                    margin: 0 auto;
+                    max-width: 360px;
+    
+                    .head__container {
+                        .logo {
+                            width: 76px;
+                            height: 56px;
+                            margin-bottom: 4rem;
+                        }
+                        .title {
+                            font-weight: 700;
+                            font-size: 3.4rem;
+                            font-family: 'Work sans';
+                            color: $color-dark-gray;
+                            text-align: center;
+    
+                            @media screen and (min-width: $breakpoint-tablet-max) {
+                                font-size: 3.8rem;
+                            }
+                        }
+                        .subtitle {
+                            @extend .title;
+                            font-weight: 400;
+                            font-size: 1.3rem;
+                            opacity: .4;
+                            margin-top: 1.6rem;
+    
+                            @media screen and (min-width: $breakpoint-tablet-max) {
+                                font-size: 1.8rem;
+                            }
+                        }
+                    }
+                    .fields__container {
+                        width: 100%;
+                        display: flex;
+                        align-items: center;
+                        flex-direction: column;
+                        gap: 3.2rem;
+                        margin: 7rem auto;
+    
+                        @media screen and (min-width: $breakpoint-tablet-max) {
+                            margin: 10.4rem auto;
+                        }
+    
+                        .field {
+                            width: 100%;
+                            position: relative;
+    
+                            label {
+                                font-family: Work Sans;
+                                font-weight: 400;
+                                font-size: 1.2rem;
+                                color: $color-placeholder;
+                                display: block;
+                                position: absolute;
+                                top: 50%;
+                                left: 12px;   
+                                transform: translateY(-50%);
+                                padding: 0 12px;
+                                transition: top .2s ease-in;
+                            }
+        
+                            &.focused label {
+                                background: white;
+                                text-align: center;
+                                color: $color-primary;
+                                top: 0;   
+                            }
+    
+                            input {
+                                width: 100%;
+                                height: 60px;
+                                background: $color-white!important;
+                                border: 1px solid $color-light-gray;
+                                border-radius: 10px;
+                                padding: 2.4rem 1.8rem;
+                                font-weight: 400;
+                                font-size: 1.2rem;
+                                color: $color-placeholder;
+                                    
+                                &::placeholder {
+                                    font-weight: 400;
+                                    font-size: 1.2rem;
+                                    color: $color-placeholder;
+                                }
+        
+                                &:focus {
+                                    border-color: $color-primary;
+                                    outline: none;
+                                    transition: .4s ease-in;
+                                }
+    
+                                &:valid {
+                                    border-color: $color-primary;
+                                    background: $color-white!important;
+                                }
+                            }
+    
+                            &.error {
+                                label {
+                                    color: $color-feedback-error;
+                                }
+                                input {
+                                    border-color: $color-feedback-error;
+                                }
+                                .error-message {
+                                    display: block;
+                                    position: absolute;
+                                    bottom: -20px;
+                                    left: 10px;
+                                    font-weight: 500;
+                                    font-size: .9rem;
+                                    color: $color-feedback-error;
+                                }
+                            }
+                            .error-message {
+                                display: none;
+                            }
+                        }
+    
+                        .logar {
+                            width: 100%;
+                            height: 60px;
+                            background: $color-primary;
+                            border: none;
+                            border-radius: 10px;
+                            font-weight: 600;
+                            font-size: 1.4rem;
+                            color: $color-white;
+    
+                            &:hover {
+                                filter: brightness(.9);
+                            }
+    
+                            &:active {
+                                transform: scale(.98);
+                            }
+    
+                            &:disabled {
+                                filter: brightness(.7);
+                                cursor: not-allowed;
+
+                                &:active {
+                                    transform: scale(1);
+                                }
+                            }
+    
+                            @media screen and (min-width: $breakpoint-tablet-max) {
+                                font-size: 1.8rem;
+                            }
+                        }
+                    }
+                }
+                .form__footer {
+                    display: block;
+                    width: 100%;
+                    text-align: center;
+                    font-weight: 500;
+                    font-size: 1.2rem;
+                    color: $color-dark-gray;
+
+                    .sign-up {
+                        color: $color-primary;
+
+                        &:hover {
+                            opacity: .6;
+                        }
+                    }
+
+                    @media screen and (min-width: $breakpoint-tablet-max) {
+                        font-size: 1.6rem;
+                    }
+                }
+            }
+        }
+
+        .success__wrapper {
+            display: none;
+
+            width: 100%;
+
+            .title {
+                font-weight: 700;
+                font-size: 1.6rem;
+                color: $color-dark-gray;
+                text-align: center;
+                margin-bottom: 6rem;
+
+                @media screen and (min-width: $breakpoint-tablet-max) {
+                    font-size: 2.8rem;
+                    margin-bottom: 12rem;
+                }
+            }
+
+            .sucess__image {
+                width: inherit;
+                margin-bottom: 12rem;
+            }
+
+            .see-products__button {
+                width: 100%;
+                max-width: 360px;
+                display: block;
+                background: $color-primary;
+                border-radius: 10px;
+                padding: 1.6rem;
+                margin: auto;
+                font-weight: 600;
+                font-size: 1.2rem;
+                color: $color-white;
+                text-align: center;
+
+                @media screen and (min-width: $breakpoint-tablet-max) {
+                    font-size: 1.8rem;
+                }
+            }
+        }
+    }
+}
