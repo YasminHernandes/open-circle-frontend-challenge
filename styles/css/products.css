@@ -1,0 +1,29 @@
+body {
+  height: 100%;
+}
+
+.header {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 2.4rem;
+}
+.header .logo {
+  width: 56px;
+  height: 56px;
+}
+.header .logout__button {
+  width: 130px;
+  height: 40px;
+  padding: 1rem;
+  font-size: 1.2rem;
+}
+.header .logout__button:hover {
+  filter: brightness(0.9);
+}
+.header .logout__button:active {
+  transform: scale(0.98);
+}
+
+/*# sourceMappingURL=products.css.map */
