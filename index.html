@@ -15,7 +15,7 @@
     <main class="main ">
         <button type="button" 
             class="login-container__button login__button" 
-            onclick="handleOpenForm()"
+            onclick="handleLogin()"
             >
             Login
         </button>
@@ -24,7 +24,7 @@
             <img src="assets/vetores/close.svg" 
                 class="close__button"
                 title="Fechar"
-                onclick="handleOpenForm()"
+                onclick="handleLogin()"
             />
            
             <div class="form__wrapper">
@@ -49,8 +49,6 @@
                                     name="email" 
                                     id="email" 
                                     onkeydown="checkFormValidation()"
-                                    onfocus="inputFocused()"
-                                    onblur="inputBlur()"
                                     autofocus
                                     autocomplete="email"
                                     required
@@ -66,8 +64,6 @@
                                     name="password" 
                                     id="password"
                                     onkeydown="checkFormValidation()"
-                                    onfocus="inputFocused()"
-                                    onblur="inputBlur()"
                                     autocomplete="current-password"
                                     required
                                 />
@@ -89,11 +85,10 @@
                 </form>
             </div>
     
-
             <div class="success__wrapper">
                 <h1 class="title">Login realizado com sucesso</h1>
                 <img src="assets/vetores/success.svg" alt="success image" class="sucess__image">
-                <a href="" class="see-products__button">Ver Produtos</a>
+                <a href="/pages/products/" class="see-products__button">Ver Produtos</a>
             </div>
         </section>
 

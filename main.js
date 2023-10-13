@@ -3,24 +3,30 @@ const containerModal = document.querySelector('.container-modal');
 const mainElement = document.querySelector('.main');
 const inputElement = document.querySelectorAll('input');
 const logarButton = document.querySelector('.logar');
+const formModal = document.querySelector('.form__wrapper');
+const successModal = document.querySelector('.success__wrapper');
 
-const inputFocused = () => event.target.offsetParent.classList.add('focused') 
-const inputBlur = () => {
-    event.target.value != "" ? event.target.offsetParent.classList.add('focused') 
-    : event.target.offsetParent.classList.remove('focused')
-}
+inputElement.forEach(input => {
+    input.addEventListener('focus', () => {
+        input?.offsetParent?.classList.add('focused')
+    })
+    input.addEventListener('blur', () => {
+        input.value != "" ? input?.offsetParent?.classList.add('focused')
+        : input.offsetParent.classList.remove('focused')
+    })
+})
 
-const handleOpenForm = () => {
+const handleLogin = () => {
     loginButton.classList.toggle('none');
     containerModal.classList.toggle('open');
     mainElement.classList.toggle('bg');
+
 }
 
+const emailInput = inputElement[0]
+const passwordInput = inputElement[1]
 
-function checkFormValidation(){
-    const emailInput = inputElement[0]
-    const passwordInput = inputElement[1]
-
+const checkFormValidation = () => {
     !emailInput.checkValidity() ? emailInput.offsetParent.classList.add('error')
     : emailInput.offsetParent.classList.remove('error')   
     
