@@ -39,5 +39,36 @@ const checkFormValidation = () => {
 
 const handleSubmit = () => {
     event.preventDefault();
-    checkFormValidation()
+    checkFormValidation();
+    executeLogin(emailInput.value, passwordInput.value);
+}
+
+const executeLogin = (email, password) => {
+    const fields = {
+        email: email,
+        password: password
+    }
+
+    const options = {
+        method: "POST",
+        headers: {
+            'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(fields)
+    }
+
+    fetch("http://localhost:3000/v1/auth", options)
+        .then(response => {
+             if(response.status == 200) {
+                return response.json()
+             }
+
+             window.location.replace('/pages/unauthorized')
+        })
+        .then(data => {
+            localStorage.setItem('token', data.token)
+
+            formModal.style.display = 'none'
+            successModal.classList.add('open')
+        })
 }
