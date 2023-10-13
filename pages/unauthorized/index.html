@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>401 | Unauthorized</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&family=Work+Sans:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <link rel="shortcut icon" href="../../assets/vetores/logo.svg" type="image/x-icon">
+    <link rel="stylesheet" href="../../styles/css/global.css">
+    <link rel="stylesheet" href="../../styles/css/unauthorized.css">
+</head>
+<body>
+    <main class="main">
+        <section class="wrapper">
+            <div class="description__container">
+                <h1 class="title">
+                    Ooops...
+                    <span class="text">Não autorizado</span>
+                </h1>
+                <p class="description">
+                    Você não está autorizado a acessar esta página, por favor 
+                    realize o login pra acessar esta página
+                </p>
+                <button type="button" class="back__button --primary" onclick="handleNavigate()">
+                    Voltar
+                    <img src="../../assets/vetores/arrowRight.svg" alt="arrow right">
+                </button>
+            </div>
+            <img src="../../assets/vetores/401 Error Unauthorized-pana.svg" 
+                alt="Unauthorized image" 
+                class="error-image">
+        </section>
+    </main>
+    
+    <script src="./main.js"></script>
+</body>
+</html>

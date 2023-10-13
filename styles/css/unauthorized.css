@@ -1,0 +1,72 @@
+.main {
+  width: 100%;
+  max-width: 1920px;
+  padding: 0 1.6rem;
+}
+.main .wrapper {
+  width: 90%;
+  display: flex;
+  flex-direction: column-reverse;
+  align-items: center;
+  gap: 2.4rem;
+  margin: 0 auto;
+}
+@media screen and (min-width: 1025.98px) {
+  .main .wrapper {
+    flex-direction: row;
+  }
+}
+.main .wrapper .description__container .title {
+  width: max-content;
+  display: flex;
+  flex-direction: column;
+  font-weight: 700;
+  font-size: 3.2rem;
+  color: #1A2E35;
+  margin-bottom: 2.8rem;
+}
+@media screen and (min-width: 768px) {
+  .main .wrapper .description__container .title {
+    font-size: 4.8rem;
+  }
+}
+.main .wrapper .description__container .title .text {
+  font-weight: 400;
+}
+.main .wrapper .description__container .description {
+  width: 70%;
+  font-weight: 400;
+  font-size: 1.6rem;
+}
+.main .wrapper .description__container .back__button {
+  width: 250px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.8rem;
+  margin-top: 7.2rem;
+  font-weight: 600;
+  cursor: pointer;
+}
+.main .wrapper .description__container .back__button:hover {
+  filter: brightness(0.9);
+}
+.main .wrapper .description__container .back__button:active {
+  transform: scale(0.98);
+}
+@media screen and (min-width: 1025.98px) {
+  .main .wrapper .description__container .back__button {
+    font-size: 2.4rem;
+  }
+}
+.main .wrapper .description__container .back__button img {
+  width: 28px;
+  height: 18px;
+}
+.main .wrapper .error-image {
+  width: inherit;
+  max-width: 700px;
+  margin: 0 auto;
+}
+
+/*# sourceMappingURL=unauthorized.css.map */
