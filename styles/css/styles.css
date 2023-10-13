@@ -12,17 +12,8 @@
   background: rgba(196, 196, 196, 0.75);
 }
 .main .login-container__button {
-  width: 100%;
   max-width: 359px;
   height: 59px;
-  padding: 1.6rem;
-  background-color: #FF7020;
-  border: none;
-  border-radius: 10px;
-  font-weight: 600;
-  font-size: 1.8rem;
-  color: #FFFFFF;
-  text-align: center;
 }
 .main .login-container__button:hover {
   filter: brightness(0.9);
@@ -83,12 +74,12 @@
 }
 .main .container-modal .form__wrapper .form .wrapper .head__container .title, .main .container-modal .form__wrapper .form .wrapper .head__container .subtitle {
   font-weight: 700;
-  font-size: 3.4rem;
+  font-size: 2.4rem;
   font-family: "Work sans";
   color: #222222;
   text-align: center;
 }
-@media screen and (min-width: 1025.98px) {
+@media screen and (min-width: 768px) {
   .main .container-modal .form__wrapper .form .wrapper .head__container .title, .main .container-modal .form__wrapper .form .wrapper .head__container .subtitle {
     font-size: 3.8rem;
   }
@@ -110,11 +101,11 @@
   align-items: center;
   flex-direction: column;
   gap: 3.2rem;
-  margin: 7rem auto;
+  margin: 5rem auto;
 }
-@media screen and (min-width: 1025.98px) {
+@media screen and (min-width: 768px) {
   .main .container-modal .form__wrapper .form .wrapper .fields__container {
-    margin: 10.4rem auto;
+    margin: 7.5rem auto;
   }
 }
 .main .container-modal .form__wrapper .form .wrapper .fields__container .field {
@@ -184,14 +175,7 @@
   display: none;
 }
 .main .container-modal .form__wrapper .form .wrapper .fields__container .logar {
-  width: 100%;
   height: 60px;
-  background: #FF7020;
-  border: none;
-  border-radius: 10px;
-  font-weight: 600;
-  font-size: 1.4rem;
-  color: #FFFFFF;
 }
 .main .container-modal .form__wrapper .form .wrapper .fields__container .logar:hover {
   filter: brightness(0.9);
@@ -231,8 +215,16 @@
   }
 }
 .main .container-modal .success__wrapper {
-  display: none;
   width: 100%;
+  position: absolute;
+  opacity: 0;
+  transform: scale(0);
+  transition: 0.4s ease-in;
+}
+.main .container-modal .success__wrapper.open {
+  position: relative;
+  transform: scale(1);
+  opacity: 1;
 }
 .main .container-modal .success__wrapper .title, .main .container-modal .success__wrapper .form__wrapper .form .wrapper .head__container .subtitle, .main .container-modal .form__wrapper .form .wrapper .head__container .success__wrapper .subtitle {
   font-weight: 700;
@@ -252,17 +244,9 @@
   margin-bottom: 12rem;
 }
 .main .container-modal .success__wrapper .see-products__button {
-  width: 100%;
   max-width: 360px;
   display: block;
-  background: #FF7020;
-  border-radius: 10px;
-  padding: 1.6rem;
   margin: auto;
-  font-weight: 600;
-  font-size: 1.2rem;
-  color: #FFFFFF;
-  text-align: center;
 }
 @media screen and (min-width: 1025.98px) {
   .main .container-modal .success__wrapper .see-products__button {

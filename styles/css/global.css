@@ -21,4 +21,16 @@ a {
   text-decoration: none;
 }
 
+.--primary {
+  width: 100%;
+  padding: 1.6rem;
+  background-color: #FF7020;
+  border: none;
+  border-radius: 10px;
+  font-weight: 600;
+  font-size: 1.8rem;
+  color: #FFFFFF;
+  text-align: center;
+}
+
 /*# sourceMappingURL=global.css.map */
