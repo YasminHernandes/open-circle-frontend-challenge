@@ -28,9 +28,15 @@ a {
   border: none;
   border-radius: 10px;
   font-weight: 600;
-  font-size: 1.8rem;
+  font-size: 1.2rem;
   color: #FFFFFF;
   text-align: center;
+  cursor: pointer;
+}
+@media screen and (min-width: 1025.98px) {
+  .--primary {
+    font-size: 1.8rem;
+  }
 }
 
 /*# sourceMappingURL=global.css.map */

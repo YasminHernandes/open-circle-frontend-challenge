@@ -25,12 +25,17 @@ a {
 
 .--primary {
     width: 100%;
-    padding:1.6rem;
+    padding: 1.6rem;
     background-color: $color-primary;
     border: none;
     border-radius: 10px;
     font-weight: 600;
-    font-size: 1.8rem;
+    font-size: 1.2rem;
     color: #FFFFFF;
     text-align: center;
+    cursor: pointer;
+
+    @media screen and (min-width: $breakpoint-tablet-max) {
+        font-size: 1.8rem;
+    }
 }
