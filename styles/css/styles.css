@@ -21,7 +21,7 @@
 .main .login-container__button:active {
   transform: scale(0.98);
 }
-.main .login-container__button.none {
+.main .login-container__button.closed {
   display: none;
 }
 .main .container-modal {
@@ -53,6 +53,10 @@
 .main .container-modal .form__wrapper {
   width: 100%;
   height: 100%;
+  display: none;
+}
+.main .container-modal .form__wrapper.open {
+  display: block;
 }
 .main .container-modal .form__wrapper .form {
   height: 100%;
@@ -252,6 +256,18 @@
   .main .container-modal .success__wrapper .see-products__button {
     font-size: 1.8rem;
   }
+}
+.main .container-modal .internal-server-error__modal {
+  width: 100%;
+  display: none;
+  flex-direction: column;
+}
+.main .container-modal .internal-server-error__modal .try-again {
+  max-width: 500px;
+  margin: 0 auto;
+}
+.main .container-modal .internal-server-error__modal.open {
+  display: flex;
 }
 
 /*# sourceMappingURL=styles.css.map */
