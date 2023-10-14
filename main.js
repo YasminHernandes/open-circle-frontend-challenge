@@ -5,26 +5,60 @@ const inputElement = document.querySelectorAll('input');
 const logarButton = document.querySelector('.logar');
 const formModal = document.querySelector('.form__wrapper');
 const successModal = document.querySelector('.success__wrapper');
-
-inputElement.forEach(input => {
-    input.addEventListener('focus', () => {
-        input?.offsetParent?.classList.add('focused')
-    })
-    input.addEventListener('blur', () => {
-        input.value != "" ? input?.offsetParent?.classList.add('focused')
-        : input.offsetParent.classList.remove('focused')
-    })
-})
-
-const handleLogin = () => {
-    loginButton.classList.toggle('none');
-    containerModal.classList.toggle('open');
-    mainElement.classList.toggle('bg');
-
-}
+const modalServerError = document.querySelector('.internal-server-error__modal');
 
 const emailInput = inputElement[0]
 const passwordInput = inputElement[1]
+
+inputElement?.forEach(input => {
+    input.addEventListener('focus', () => {
+        input?.offsetParent?.classList.add('focused')
+    });
+    input.addEventListener('blur', () => {
+        input.value != "" ? input?.offsetParent?.classList.add('focused')
+        : input?.offsetParent?.classList.remove('focused')
+    });
+})
+
+const handleLogin = () => {
+    addElement(loginButton, "closed")
+    addElement(containerModal, 'open');
+    
+    if(containerModal.classList.contains('open')) {
+        addElement(mainElement, "bg")
+        addElement(formModal, 'open')
+    }
+
+    inputElement?.forEach(input => input?.offsetParent?.classList.remove('focused'))
+}
+
+const handleCloseModal = () => {
+    resetModal()
+    removeElement(loginButton, "closed")
+    clearFields()
+    
+}
+const resetModal = () => {
+    removeElement(containerModal, "open")
+    removeElement(formModal, "open")
+    removeElement(mainElement, "bg")
+    removeElement(successModal, "open")
+    removeElement(modalServerError, "open")
+}
+
+const removeElement = (modal, className) => {
+    modal.classList.remove(className)
+}
+
+const addElement = (modal, className) => {
+    modal.classList.add(className)
+}
+
+const clearFields = () => {
+    emailInput.value = ''
+    passwordInput.value = ''
+}
+
 
 const checkFormValidation = () => {
     !emailInput.checkValidity() ? emailInput.offsetParent.classList.add('error')
@@ -59,16 +93,25 @@ const executeLogin = (email, password) => {
 
     fetch("http://localhost:3000/v1/auth", options)
         .then(response => {
-             if(response.status == 200) {
-                return response.json()
-             }
-
-             window.location.replace('/pages/unauthorized')
+             if(response.status == 200) return response.json()
+            if(response.status == 401) {
+              window.location.replace('/pages/unauthorized')
+              return;
+            }
+           
+            return setInterval(addElement(modalServerError, 'flex'), 1000)
         })
         .then(data => {
             localStorage.setItem('token', data.token)
-
-            formModal.style.display = 'none'
-            successModal.classList.add('open')
+            removeElement(formModal, 'open')
+            addElement(successModal, 'open')
         })
+        .catch(error => {
+            addElement(modalServerError, 'open')
+            removeElement(formModal, 'open')
+
+            console.error(error)
+
+        })
+        .finally(() => clearFields())
 }
