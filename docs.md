@@ -12,4 +12,4 @@ A aplicação foi mockada utilizando o app mockoon.
 - Siga o fluxo de utilização abaixo para validar a aplicação.
 
 
-![](assets/vetores/fluxo-de-utilizacao.drawio.svg)
+![](assets/imagens/fluxo-de-utilizacao-open-challenge.drawio.png)
